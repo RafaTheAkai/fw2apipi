@@ -1,5 +1,5 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = process.env.dbconn; // chave gravada em variável de ambiente
+const uri = process.env.dbconnect; // chave gravada em variável de ambiente
 // MongoClient
 module.exports = (app) => {
   const client = new MongoClient(uri, {
@@ -10,4 +10,5 @@ module.exports = (app) => {
     }
   });
   app.dbClient = client; // agora pode ser acessado em qualquer lugar com app.dbClient
+
 };
